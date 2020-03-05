@@ -10,7 +10,7 @@ namespace VigenereCipher
     {
         public string Encrypt(string key, string message)
         {
-            string encString = string.Empty;
+            string encryptedString = string.Empty;
             char[] messageArray = message.ToLower().ToCharArray();
             char[] keyArray = key.ToLower().ToCharArray();
 
@@ -23,17 +23,17 @@ namespace VigenereCipher
                 int keyIndex = IndexData.GetIndexOfCharacter(keyArray[keyNum]);
                 int messageIndex = IndexData.GetIndexOfCharacter(messageArray[i]);
 
-                encString += CyptherData.Cypher[keyIndex, messageIndex];
+                encryptedString += CyptherData.Cypher[keyIndex, messageIndex];
                 keyNum++;
             }
 
-            return encString;
+            return encryptedString;
         }
 
         //https://www.dcode.fr/vigenere-cipher
         public string Decrypt(string key, string encMessage)
         {
-            string deString = string.Empty;
+            string decryptedString = string.Empty;
 
             int keyDecode = 0;
             char[] encMessageArray = encMessage.ToLower().ToCharArray();
@@ -49,11 +49,11 @@ namespace VigenereCipher
                 int c = IndexData.GetIndexOfCharacterFromCypther(a, encMessageArray[i]);
 
 
-                deString += CyptherData.Alphabet[c];
+                decryptedString += CyptherData.Alphabet[c];
                 keyDecode++;
             }
 
-            return deString;
+            return decryptedString;
         }
     }
 }

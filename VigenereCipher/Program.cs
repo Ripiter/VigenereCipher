@@ -4,10 +4,6 @@ namespace VigenereCipher
 {
     class Program
     {
-        static char[] movingArray = new char[26];
-        static char[] alphabet = new char[26];
-        static char[,] cypher = new char[26, 26];
-
         static void Main(string[] args)
         {
             Vigenere vigenere = new Vigenere();
