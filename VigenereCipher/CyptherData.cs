@@ -18,8 +18,8 @@ namespace VigenereCipher
 
         public static void GenerateData()
         {
-            for (int i = 97; i < 123; i++)
-                Alphabet[i - 97] = (char)i;
+            for (int i = 0; i < Alphabet.Length; i++)
+                Alphabet[i] = (char)(i + 97);
 
             Array.Copy(Alphabet, MovingArray, Alphabet.Length);
 
